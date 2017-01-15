@@ -214,11 +214,9 @@ class Payflow extends PayflowBase {
 
       $allowed = [
         PayflowResultCode::APPROVED,
-        PayflowResultCode::FLAGGED_FOR_REVIEW_BY_FRAUD_FILTERS,
       ];
 
-     // if (!in_array($data['result'], $allowed) || $data['respmsg'] != 'Verified') {
-     if (!in_array($data['result'], $allowed)) {
+      if (!in_array($data['result'], $allowed)) {
         throw new HardDeclineException("Unable to verify the credit card.", $data['result']);
       }
 
