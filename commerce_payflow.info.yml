@@ -1,0 +1,7 @@
+name: Commerce Payflow
+type: module
+description: 'Provides Commerce integration for the PayPal Payflow payment gateway.'
+package: Commerce (contrib)
+core: 8.x
+dependencies:
+  - commerce_payment

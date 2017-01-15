@@ -1,0 +1,10 @@
+{
+  "name": "drupal/commerce_payflow",
+  "type": "drupal-module",
+  "description": "Provides Commerce integration for the PayPal Payflow payment gateway.",
+  "homepage": "https://github.com/TopFloorTech/drupal-commerce_payflow",
+  "license": "GPL-2.0+",
+  "require": {
+    "drupal/commerce": "~2"
+  }
+}
