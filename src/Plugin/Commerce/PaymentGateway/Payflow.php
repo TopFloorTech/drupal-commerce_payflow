@@ -39,12 +39,7 @@ class Payflow extends PayflowBase {
    * {@inheritdoc}
    */
   public function createPayment(PaymentInterface $payment, $capture = TRUE) {
-    try {
-      $this->validatePayment($payment, PaymentState::NEW);
-    } catch (\Exception $e) {
-      dpm($e);
-    }
-
+    $this->validatePayment($payment, PaymentState::NEW);
 
     try {
       $data = $this->executeTransaction([
@@ -239,12 +234,8 @@ class Payflow extends PayflowBase {
         ->setRemoteId($data['pnref'])
         ->setExpiresTime($expires)
         ->save();
-
-      dpm($payment_method);
     } catch (RequestException $e) {
       throw new HardDeclineException("Unable to store the credit card");
-    } catch (\Exception $e) {
-      dpm($e);
     }
   }
 
