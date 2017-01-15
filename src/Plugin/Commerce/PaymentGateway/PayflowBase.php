@@ -236,8 +236,6 @@ abstract class PayflowBase extends OnsitePaymentGatewayBase implements PayflowIn
   protected function prepareBody(array $parameters = []) {
     $parameters = $this->getParameters($parameters);
 
-    dpm($parameters);
-
     $values = [];
     foreach ($parameters as $key => $value) {
       $values[] = strtoupper($key) . '=' . $value;
@@ -255,8 +253,6 @@ abstract class PayflowBase extends OnsitePaymentGatewayBase implements PayflowIn
 
       $result[strtolower($key)] = $value;
     }
-
-    dpm($result);
 
     return $result;
   }
